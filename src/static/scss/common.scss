@@ -1,0 +1,8 @@
+@import 'vars';
+@import './modules/app-preloader';
+@import './pages/main-page';
+
+body {
+  background: $color-grey;
+  font-family: $roboto;
+}

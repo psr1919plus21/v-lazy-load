@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue-lazy-load</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="build/static/css/common.css">
+
+  <script>
+    document.querySelector('html').classList.remove('no-js');
+  </script>
+</head>
+<body>
+
+  <main class="page">
+    <h1 class="page__title">Статический контент</h1>
+    <p class="page__text">Грузится из обычного <code>html</code>.</p>
+    <p class="page__text">Этот контент отображается быстро и не зависит от js.</p>
+    <img class="page__img" src="build/static/img/static_cat.png" alt="static cat">
+  </main>
+
+  <div id="app" class="app-container">
+    <div class="spiner"></div>
+    <div class="no-js__message">Включите js для работы этого блока</div>
+  </div>
+
+  <script src="build/static/js/index.js"></script>
+</body>
+</html>

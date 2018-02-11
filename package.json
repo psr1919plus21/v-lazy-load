@@ -1,0 +1,47 @@
+{
+  "name": "vue-lazy-load",
+  "version": "1.0.0",
+  "description": "vue component for lazy load pictures",
+  "main": "index.js",
+  "scripts": {
+    "dev:static": "./node_modules/.bin/gulp watch",
+    "dev:webpack": "NODE_ENV=development ./node_modules/.bin/webpack",
+    "build:static": "./node_modules/.bin/gulp build",
+    "build:webpack": "NODE_ENV=production ./node_modules/.bin/webpack",
+    "build": "npm run build:static && npm run build:webpack",
+    "test": "mocha-webpack --webpack-config webpack.config.js --require src/test/setup.js src/test/**/*.test.js",
+    "test:watch": "npm run test -- --watch"
+  },
+  "keywords": [
+    "vue",
+    "lazyload"
+  ],
+  "author": "psr1919plus21",
+  "license": "MIT",
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.11",
+    "babel-jest": "^22.2.2",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.9",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^4.0.2",
+    "gulp-flatten": "^0.4.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.3.4",
+    "jest": "^22.2.2",
+    "jest-vue-preprocessor": "^1.3.1",
+    "jsdom": "^11.6.2",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^5.0.0",
+    "mocha-webpack": "^1.0.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "vue": "^2.5.13",
+    "vue-loader": "^14.1.1",
+    "vue-server-renderer": "^2.5.13",
+    "vue-style-loader": "^3.1.2",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0"
+  }
+}

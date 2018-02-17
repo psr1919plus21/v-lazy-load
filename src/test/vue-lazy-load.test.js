@@ -4,7 +4,7 @@ import VueLazyLoad from '../app/vue-lazy-load.vue';
 
 describe('vue-lazy-load', () => {
 
-  it('should render original image', () => {
+  it('should render original image', (done) => {
     const wrapper = mount(VueLazyLoad, {
       propsData: {
         imgUrl: 'cat.jpg',
@@ -12,8 +12,13 @@ describe('vue-lazy-load', () => {
       }
     });
 
-    const imgElement = wrapper.find('.vue-lazy-load__image');
-    expect(imgElement.element.src).toBe('cat.jpg');
+    const imgElement = wrapper.find('.vue-lazy-load__image_original');
+
+    setTimeout(() => {
+      expect(imgElement.element.src).toBe('cat.jpg');
+      done();
+    }, 0);
+
   });
 
   it('should render alt text for image', () => {
@@ -52,6 +57,18 @@ describe('vue-lazy-load', () => {
 
     const imgElement = wrapper.find('.vue-lazy-load__image');
     expect(imgElement.element.style.minHeight).toBe('600px');
+  });
+
+  it('should set img-placeholder', () => {
+    const wrapper = mount(VueLazyLoad, {
+      propsData: {
+        imgUrl: 'cat.jpg',
+        imgPlaceholder: 'cat_placeholder.jpg'
+      }
+    });
+
+    const imgElement = wrapper.find('.vue-lazy-load__image');
+    expect(imgElement.element.src).toBe('cat_placeholder.jpg');
   });
 })
 

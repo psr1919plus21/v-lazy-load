@@ -1,6 +1,7 @@
 <style>
 .vue-lazy-load__image {
   display: block;
+  width: 100%;
 }
 
 </style>
@@ -8,10 +9,19 @@
 <template>
   <div class="vue-lazy-load">
     <img
-      class="vue-lazy-load__image"
+      v-show="!isOriginalImageLoaded"
+      class="vue-lazy-load__image vue-lazy-load__image_thumbnail"
       :alt="imgAlt"
-      :src="imgUrl"
+      :src="imgPlaceholder"
       :style="customStyles" >
+
+    <img
+        v-show="isOriginalImageLoaded"
+        ref="originalImageRef"
+        class="vue-lazy-load__image vue-lazy-load__image_original"
+        :alt="imgAlt"
+        :src="imgOriginal"
+        :style="customStyles" >
   </div>
 </template>
 
@@ -37,6 +47,10 @@ export default {
       required: true
     },
 
+    imgPlaceholder: {
+      type: String
+    },
+
     minWidth: {
       type: Number
     },
@@ -48,9 +62,24 @@ export default {
 
   data() {
     return {
-      test: 'dfdf',
-      customStyles: {}
+      customStyles: {},
+      isOriginalImageLoaded: false,
+      imgOriginal: ''
     }
+  },
+
+  methods: {
+
+    getOriginalImage() {
+      const vm = this;
+      const originalImageRef = this.$refs['originalImageRef'];
+      originalImageRef.onload = function () {
+        vm.isOriginalImageLoaded = true;
+        vm.customStyles = {};
+      };
+      this.imgOriginal = this.imgUrl;
+    }
+
   },
 
   beforeMount() {
@@ -61,7 +90,36 @@ export default {
     if(this.minHeight) {
       this.customStyles.minHeight = `${this.minHeight}px`;
     }
+  },
+
+  mounted() {
+    this.getOriginalImage();
   }
 }
 
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

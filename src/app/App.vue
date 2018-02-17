@@ -1,12 +1,25 @@
+<style media="screen">
+
+  .cat-image {
+    margin: auto;
+    max-width: 320px;
+    min-height: 250px;
+  }
+</style>
+
 <template>
   <div class="app">
-    <vue-lazy-load
-      :imgUrl="catPhoto"
-      :imgPlaceholder="placeholderPhoto"
-      :imgAlt="'Cute cat'"
-      :minHeight="619"
-    />
-    <Chat />
+
+    <div class="cat-image">
+      <vue-lazy-load
+        :imgUrl="catPhoto"
+        :imgPlaceholder="placeholderPhoto"
+        :imgAlt="'Cute cat'"
+        :minHeight="250"
+      />
+    </div>
+
+    <!-- <Chat /> -->
   </div>
 </template>
 

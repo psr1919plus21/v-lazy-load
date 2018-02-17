@@ -67,7 +67,7 @@ describe('vue-lazy-load', () => {
       }
     });
 
-    const imgElement = wrapper.find('.vue-lazy-load__image');
+    const imgElement = wrapper.find('.vue-lazy-load__image_thumbnail');
     expect(imgElement.element.src).toBe('cat_placeholder.jpg');
   });
 })

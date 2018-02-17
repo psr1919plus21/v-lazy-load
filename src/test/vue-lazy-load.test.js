@@ -8,6 +8,7 @@ describe('vue-lazy-load', () => {
     const wrapper = mount(VueLazyLoad, {
       propsData: {
         imgUrl: 'cat.jpg',
+        imgPlaceholder: 'cat_placeholder.jpg',
         imgAlt: 'cute cat'
       }
     });
@@ -25,6 +26,7 @@ describe('vue-lazy-load', () => {
     const wrapper = mount(VueLazyLoad, {
       propsData: {
         imgUrl: 'cat.jpg',
+        imgPlaceholder: 'cat_placeholder.jpg',
         imgAlt: 'cute cat'
       }
     });
@@ -37,6 +39,7 @@ describe('vue-lazy-load', () => {
     const wrapper = mount(VueLazyLoad, {
       propsData: {
         imgUrl: 'cat.jpg',
+        imgPlaceholder: 'cat_placeholder.jpg',
         imgAlt: 'cute cat',
         minWidth: 500
       }
@@ -50,6 +53,7 @@ describe('vue-lazy-load', () => {
     const wrapper = mount(VueLazyLoad, {
       propsData: {
         imgUrl: 'cat.jpg',
+        imgPlaceholder: 'cat_placeholder.jpg',
         imgAlt: 'cute cat',
         minHeight: 600
       }
@@ -78,8 +82,8 @@ describe('vue-lazy-load', () => {
       }
     });
 
-    const imgElement = wrapper.find('.vue-lazy-load__standart-placeholder');
-    expect(imgElement.element).toBeDefined();
+    const placeholderElement = wrapper.find('.vue-lazy-load__standart-placeholder');
+    expect(placeholderElement.element).toBeDefined();
   });
 })
 

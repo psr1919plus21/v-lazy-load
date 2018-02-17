@@ -13,7 +13,7 @@
     <div class="cat-image">
       <vue-lazy-load
         :imgUrl="catPhoto"
-        :imgPlaceholder="placeholderPhoto"
+
         :imgAlt="'Cute cat'"
         :minHeight="250"
       />

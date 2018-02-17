@@ -70,6 +70,17 @@ describe('vue-lazy-load', () => {
     const imgElement = wrapper.find('.vue-lazy-load__image_thumbnail');
     expect(imgElement.element.src).toBe('cat_placeholder.jpg');
   });
+
+  it('should show standart placeholder in not given', () => {
+    const wrapper = mount(VueLazyLoad, {
+      propsData: {
+        imgUrl: 'cat.jpg'
+      }
+    });
+
+    const imgElement = wrapper.find('.vue-lazy-load__standart-placeholder');
+    expect(imgElement.element).toBeDefined();
+  });
 })
 
 

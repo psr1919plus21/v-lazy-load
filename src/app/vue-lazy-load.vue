@@ -1,7 +1,26 @@
 <style>
+.vue-lazy-load {
+  position: relative;
+}
+
 .vue-lazy-load__image {
   display: block;
   width: 100%;
+}
+
+.vue-lazy-load__image_thumbnail {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-leave-to {
+  opacity: 0;
 }
 
 // Standart placeholder styles
@@ -33,12 +52,14 @@
     </div>
 
     <!-- Placeholder given by user -->
-    <img
-      v-show="!isOriginalImageLoaded && imgPlaceholder"
-      class="vue-lazy-load__image vue-lazy-load__image_thumbnail"
-      :alt="imgAlt"
-      :src="imgPlaceholder"
-      :style="customStyles" >
+    <transition name="fade">
+      <img
+        v-if="!isOriginalImageLoaded && imgPlaceholder"
+        class="vue-lazy-load__image vue-lazy-load__image_thumbnail"
+        :alt="imgAlt"
+        :src="imgPlaceholder"
+        :style="customStyles" >
+    </transition>
 
     <!-- Original image -->
     <img
@@ -59,6 +80,9 @@
 // done – если картинка плейсхолдер не найдена – показывать стандартный плейсхолдер
 // done – замена текста в плейсхолдере в зависимости от атрибута lang в html
 // done – добавлен вывод в варнинга об отсутствии плейсхолдера в консоль
+// блюр плейсхолдера по умолчанию
+// флаг отключения блюра
+// пропс для настройки блюра
 // – передавать цвет в качестве плейсхолдера (это может быть цвет или градиент)
 // – обработать случай с ретиной
 
@@ -95,7 +119,9 @@ export default {
 
   data() {
     return {
-      customStyles: {},
+      customStyles: {
+        filter: 'blur(10px)'
+      },
       isOriginalImageLoaded: false,
       imgOriginal: '',
       lang: 'en'
@@ -152,28 +178,3 @@ export default {
 }
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//

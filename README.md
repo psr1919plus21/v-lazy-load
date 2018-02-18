@@ -1,6 +1,6 @@
 # v-lazy-load – component that allows you create lazy-loaded images in few simple steps.
 
-![v-lazy-load cat](https://raw.githubusercontent.com/psr1919plus21/v-lazy-load/production/img/cat.jpg)
+![v-lazy-load cat](https://raw.githubusercontent.com/psr1919plus21/v-lazy-load/production/img/cat_.jpg)
 
 Get *v-lazy-load*
 ----------
@@ -59,7 +59,7 @@ Props
 
 example of forgotten placeholder prop:
 
-![v-lazy-load placehilder-cat](https://raw.githubusercontent.com/psr1919plus21/v-lazy-load/production/img/cat-advicer.jpg)
+![v-lazy-load placehilder-cat](https://raw.githubusercontent.com/psr1919plus21/v-lazy-load/production/img/cat-advicer_.jpg)
 
 
 *optional:*

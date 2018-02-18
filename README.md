@@ -39,7 +39,7 @@ yourComponent.vue
     </template>
 
     <script>
-      import VLazyLoad from 'v-lazy-load';
+      import VLazyLoad from 'v-lazy-load/v-lazy-load.vue';
     </script>
 
 

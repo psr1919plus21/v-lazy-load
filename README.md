@@ -55,15 +55,16 @@ Props
 
 **imgAlt** – [String] – Alternative text for image, will be shown if original image not be loaded.
 
-**imgPlaceholder** – [String] – tiny placeholder for original image. This field doesn't mark ass required actually, but you will see cute cat svg image that reminds you to add placeholder if not given. Also you will see console.warn message. Messages will be shown on lang based on html lang attribute. `en` and `ru` is available.
+**imgPlaceholder** – [String] – tiny placeholder for original image. This field doesn't mark as required actually, but you will see cute cat svg image that reminds you to add placeholder if not given. Also you will see `console.warn` message. Messages will be shown on lang based on html lang attribute. `en` and `ru` is available.
 
 example of forgotten placeholder prop:
+
 ![vue-lazy-load placehilder-cat](https://raw.githubusercontent.com/psr1919plus21/vue-lazy-load/production/img/cat-advicer.jpg)
 
 
 *optional:*
 
-**blurValue** – [Number] – set value for placeholder's blur. 10 by default.
+**blurValue** – [Number] – set value for placeholder's blur. `10` by default.
 
 **minWidth** – [Number] – set min width for photo.
 

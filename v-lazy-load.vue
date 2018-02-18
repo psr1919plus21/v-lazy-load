@@ -1,15 +1,15 @@
 <style>
-.vue-lazy-load {
+.v-lazy-load {
   position: relative;
   overflow: hidden;
 }
 
-.vue-lazy-load__image {
+.v-lazy-load__image {
   display: block;
   width: 100%;
 }
 
-.vue-lazy-load__image_thumbnail {
+.v-lazy-load__image_thumbnail {
   bottom: 0;
   left: 0;
   position: absolute;
@@ -42,12 +42,12 @@
 
 <template>
 
-  <div class="vue-lazy-load">
+  <div class="v-lazy-load">
 
     <!-- Inlined standart placeholder -->
     <div
       v-if="!isOriginalImageLoaded && !imgPlaceholder"
-      class="vue-lazy-load__standart-placeholder"
+      class="v-lazy-load__standart-placeholder"
       >
         <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 607" style="enable-background:new 0 0 512 607;" xml:space="preserve"><path class="st0" d="M444.4,3.7c10.8-8.8,27-1.1,27,12.9v222L289.1,130.9L444.4,3.7z"/><path class="st1" d="M454.8,228.8l-111-65.6L436.3,59c6.5-7.3,18.5-2.7,18.5,7V228.8z"/><path class="st0" d="M67.6,3.7c-10.8-8.8-27-1.1-27,12.9v222l182.3-107.7L67.6,3.7z"/><path class="st1" d="M57.2,228.8l111-65.6L75.7,59c-6.5-7.3-18.5-2.7-18.5,7V228.8z"/><ellipse class="st2" cx="256" cy="292.5" rx="232" ry="219.5"/><path class="st3" d="M289.1,429.2v16.6c0,18.3-14.8,33.1-33.1,33.1l0,0c-18.3,0-33.1-14.8-33.1-33.1v-16.6l33.1-16.6L289.1,429.2z"/><path class="st4" d="M274.3,343.9h-36.6c-7.9,0-12.3,9.2-7.3,15.3l18.3,22.6c3.8,4.7,10.9,4.7,14.6,0l18.3-22.6C286.6,353,282.2,343.9,274.3,343.9z"/><g><path class="st5" d="M479.7,437.4c-1.3,0-2.6-0.3-3.8-0.9c-50.1-26-128.5-41.5-129.3-41.7c-4.5-0.9-7.4-5.2-6.5-9.7c0.9-4.5,5.2-7.4,9.7-6.5c3.3,0.6,81.5,16.1,133.8,43.2c4.1,2.1,5.6,7.1,3.5,11.2C485.6,435.8,482.7,437.4,479.7,437.4z"/><path class="st5" d="M496.3,379.5c-0.7,0-1.4-0.1-2.2-0.3c-46.4-12.5-130.9-10.1-131.7-10.1c-4.7,0.1-8.4-3.5-8.5-8c-0.1-4.6,3.5-8.4,8-8.5c3.6-0.1,87.7-2.5,136.5,10.6c4.4,1.2,7,5.7,5.8,10.2C503.3,377,499.9,379.4,496.3,379.5z"/></g><path class="st0" d="M314,495.4c-128.1,0-232-98.3-232-219.5c0-89,56-165.6,136.5-200.1C108.2,92.8,24,183.3,24,292.5C24,413.7,127.9,512,256,512c34,0,66.3-7,95.4-19.5C339.2,494.4,326.7,495.4,314,495.4z"/><g><path class="st5" d="M32.3,437.4c-3,0-5.9-1.6-7.4-4.5c-2.1-4.1-0.5-9.1,3.5-11.2c52.2-27.2,130.5-42.6,133.8-43.2c4.5-0.9,8.8,2.1,9.7,6.5c0.9,4.5-2.1,8.8-6.5,9.7c-0.8,0.2-79.2,15.6-129.3,41.7C34.9,437.1,33.6,437.4,32.3,437.4z"/><path class="st5" d="M15.7,379.5c-3.7,0-7-2.4-8-6.1c-1.2-4.4,1.4-9,5.8-10.2c48.8-13.1,132.9-10.7,136.5-10.6c4.6,0.1,8.2,4,8,8.5c-0.1,4.6-4.1,8.2-8.5,8c-0.8,0-85.3-2.4-131.7,10.1C17.2,379.4,16.5,379.5,15.7,379.5z"/></g><path class="st6" d="M160.7,321.5L160.7,321.5c-15.9,0-29-13-29-29v-16.6c0-15.9,13-29,29-29l0,0c15.9,0,29,13,29,29v16.6C189.7,308.4,176.7,321.5,160.7,321.5z"/><path class="st4" d="M160.7,246.9c-1.4,0-2.8,0.2-4.1,0.4v41c0,9.2,7.4,16.6,16.6,16.6s16.6-7.4,16.6-16.6v-12.4C189.7,259.9,176.7,246.9,160.7,246.9z"/><circle class="st7" cx="160.7" cy="267.6" r="12.4"/><path class="st6" d="M351.3,321.5L351.3,321.5c-15.9,0-29-13-29-29v-16.6c0-15.9,13-29,29-29l0,0c15.9,0,29,13,29,29v16.6C380.3,308.4,367.2,321.5,351.3,321.5z"/><path class="st4" d="M351.3,246.9c-1.4,0-2.8,0.2-4.1,0.4v41c0,9.2,7.4,16.6,16.6,16.6s16.6-7.4,16.6-16.6v-12.4C380.3,259.9,367.2,246.9,351.3,246.9z"/><circle class="st7" cx="351.3" cy="267.6" r="12.4"/><path class="st6" d="M262.4,382.1l-18.3-36.2c-0.3-0.7-0.5-1.4-0.8-2.1h-5.6c-7.9,0-12.3,9.2-7.3,15.3l18.3,22.6c3.6,4.4,10,4.5,13.9,0.6C262.5,382.3,262.5,382.2,262.4,382.1z"/><path class="st8" d="M256,412.6l-33.1,16.6v16.6c0,2.6,0.4,5.2,1,7.6c8.3-1,16.4-3.4,23.9-7.2v7.8c0,4.6,3.7,8.3,8.3,8.3c4.6,0,8.3-3.7,8.3-8.3v-7.8c7.5,3.7,15.6,6.1,23.9,7.2c0.6-2.5,1-5,1-7.6v-16.6L256,412.6z"/><path class="st1" d="M297.4,437.4c-11.7,0-23-3.5-32.7-10.1c-5.2-3.5-12.4-3.5-17.5,0c-9.6,6.6-20.9,10.1-32.6,10.1c-14.3,0-28-5.3-38.7-14.9c-3.4-3.1-3.7-8.3-0.6-11.7s8.3-3.7,11.7-0.6c13.9,12.5,35.7,13.8,50.9,3.4c10.8-7.4,25.4-7.4,36.2,0c15.2,10.4,37,9,50.9-3.4c3.4-3,8.6-2.8,11.7,0.6c3.1,3.4,2.8,8.6-0.6,11.7C325.4,432.2,311.7,437.4,297.4,437.4z"/><text v-if="lang === 'en'" transform="matrix(1 0 0 1 19.4609 562)" class="st0 st9 st10">kitty advises you to add placeholder</text><text v-if="lang === 'ru'" transform="matrix(1 0 0 1 19.4609 562)" class="st0 st9 st10 text_ru">котик советует вам добавить плейсхолдер</text></svg>
     </div>
@@ -56,7 +56,7 @@
     <transition name="fade">
       <img
         v-if="!isOriginalImageLoaded && imgPlaceholder"
-        class="vue-lazy-load__image vue-lazy-load__image_thumbnail"
+        class="v-lazy-load__image v-lazy-load__image_thumbnail"
         :alt="imgAlt"
         :src="imgPlaceholder"
         :style="[customStyles, thumbnailStyles]" >
@@ -66,7 +66,7 @@
     <img
         v-show="isOriginalImageLoaded"
         ref="originalImageRef"
-        class="vue-lazy-load__image vue-lazy-load__image_original"
+        class="v-lazy-load__image v-lazy-load__image_original"
         :alt="imgAlt"
         :src="imgOriginal"
         :style="customStyles" >

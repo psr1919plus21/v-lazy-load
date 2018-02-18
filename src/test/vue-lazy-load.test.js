@@ -86,7 +86,7 @@ describe('vue-lazy-load', () => {
     expect(placeholderElement.element).toBeDefined();
   });
 
-  it('should show blur on thumbnail.', () => {
+  it('should show default blur on thumbnail', () => {
     const wrapper = mount(VueLazyLoad, {
       propsData: {
         imgUrl: 'cat.jpg',
@@ -96,6 +96,19 @@ describe('vue-lazy-load', () => {
 
     const thumbnailFilterStyle = wrapper.vm.thumbnailStyles.filter;
     expect(thumbnailFilterStyle).toBe('blur(10px)');
+  });
+
+  it('should pass  blurValue for thumbnail through props', () => {
+    const wrapper = mount(VueLazyLoad, {
+      propsData: {
+        imgUrl: 'cat.jpg',
+        imgPlaceholder: 'cat_placeholder.jpg',
+        blurValue: 6
+      }
+    });
+
+    const thumbnailFilterStyle = wrapper.vm.thumbnailStyles.filter;
+    expect(thumbnailFilterStyle).toBe('blur(6px)');
   });
 
 })

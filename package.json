@@ -13,6 +13,10 @@
     "lazyload",
     "lazy-load"
   ],
-  "author": "Philipp Gaponenko",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psr1919plus21/vue-lazy-load"
+  },
+  "author": "psr1919plus21",
   "license": "MIT"
 }

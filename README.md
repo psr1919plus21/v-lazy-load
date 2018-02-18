@@ -1,8 +1,8 @@
-# vue-lazy-load – component that allows you create lazy-loaded images in few simple steps.
+# v-lazy-load – component that allows you create lazy-loaded images in few simple steps.
 
-![vue-lazy-load cat](https://raw.githubusercontent.com/psr1919plus21/vue-lazy-load/production/img/cat.jpg)
+![v-lazy-load cat](https://raw.githubusercontent.com/psr1919plus21/v-lazy-load/production/img/cat.jpg)
 
-Get *vue-lazy-load*
+Get *v-lazy-load*
 ----------
 
 Here several ways to get *vue-rhythm*:
@@ -10,16 +10,16 @@ Here several ways to get *vue-rhythm*:
 **download**
 
 Copypaste component in your project:
-[Get vue-lazy-load](https://raw.githubusercontent.com/psr1919plus21/vue-lazy-load/production/vue-lazy-load.vue)
+[Get v-lazy-load](https://raw.githubusercontent.com/psr1919plus21/v-lazy-load/production/v-lazy-load.vue)
 
 **npm**
 
-    npm install vue-lazy-load
+    npm install v-lazy-load
 
 
 Usage
 ---------
-In order to add *vue-lazy-load*  you need to import *vue-lazy-load* component to your project and place `<vue-lazy-load></vue-lazy-load>` component with it props to your template.
+In order to add *v-lazy-load*  you need to import *v-lazy-load* component to your project and place `<v-lazy-load></v-lazy-load>` component with it props to your template.
 
 **Example:**
 yourComponent.vue
@@ -28,7 +28,7 @@ yourComponent.vue
       <div class="app">
 
         <div class="cat-image">
-          <vue-lazy-load
+          <v-lazy-load
             :imgUrl="linkToCatPhoto"
             :imgPlaceholder="linkToPlaceholderPhoto"
             :imgAlt="'Cute cat'"
@@ -39,11 +39,11 @@ yourComponent.vue
     </template>
 
     <script>
-      import VueLazyLoad from 'vue-lazy-load';
+      import VueLazyLoad from 'v-lazy-load';
     </script>
 
 
-After this *vue-lazy-load* create an img element with blurred placeholder that will be substituted by original image when it be loaded.
+After this *v-lazy-load* create an img element with blurred placeholder that will be substituted by original image when it be loaded.
 
 
 Props
@@ -59,7 +59,7 @@ Props
 
 example of forgotten placeholder prop:
 
-![vue-lazy-load placehilder-cat](https://raw.githubusercontent.com/psr1919plus21/vue-lazy-load/production/img/cat-advicer.jpg)
+![v-lazy-load placehilder-cat](https://raw.githubusercontent.com/psr1919plus21/v-lazy-load/production/img/cat-advicer.jpg)
 
 
 *optional:*

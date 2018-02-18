@@ -85,6 +85,19 @@ describe('vue-lazy-load', () => {
     const placeholderElement = wrapper.find('.vue-lazy-load__standart-placeholder');
     expect(placeholderElement.element).toBeDefined();
   });
+
+  it('should show blur on thumbnail.', () => {
+    const wrapper = mount(VueLazyLoad, {
+      propsData: {
+        imgUrl: 'cat.jpg',
+        imgPlaceholder: 'cat_placeholder.jpg'
+      }
+    });
+
+    const thumbnailFilterStyle = wrapper.vm.thumbnailStyles.filter;
+    expect(thumbnailFilterStyle).toBe('blur(10px)');
+  });
+
 })
 
 

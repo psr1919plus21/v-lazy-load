@@ -1,6 +1,7 @@
 <style>
 .vue-lazy-load {
   position: relative;
+  overflow: hidden;
 }
 
 .vue-lazy-load__image {
@@ -58,7 +59,7 @@
         class="vue-lazy-load__image vue-lazy-load__image_thumbnail"
         :alt="imgAlt"
         :src="imgPlaceholder"
-        :style="customStyles" >
+        :style="[customStyles, thumbnailStyles]" >
     </transition>
 
     <!-- Original image -->
@@ -109,6 +110,11 @@ export default {
       type: String
     },
 
+    blurValue: {
+      type: Number,
+      default: 10
+    },
+
     minWidth: {
       type: Number
     },
@@ -120,8 +126,9 @@ export default {
 
   data() {
     return {
-      customStyles: {
-        filter: 'blur(10px)'
+      customStyles: {},
+      thumbnailStyles: {
+        filter: `blur(${this.blurValue}px)`
       },
       isOriginalImageLoaded: false,
       imgOriginal: '',
@@ -137,6 +144,7 @@ export default {
       originalImageRef.onload = function () {
         vm.isOriginalImageLoaded = true;
         vm.customStyles = {};
+        vm.thumbnailStyles = {};
       };
       this.imgOriginal = this.imgUrl;
     },

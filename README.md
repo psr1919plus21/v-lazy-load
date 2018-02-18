@@ -40,6 +40,12 @@ yourComponent.vue
 
     <script>
       import VLazyLoad from 'v-lazy-load/v-lazy-load.vue';
+
+      export default {
+        components: {
+          VLazyLoad
+        }
+      }
     </script>
 
 

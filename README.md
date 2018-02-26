@@ -1,85 +1,73 @@
-# v-lazy-load – VueJs component that allows you create lazy-loaded images in few simple steps.
+# v-lazy-load 
 
-![v-lazy-load cat](https://raw.githubusercontent.com/psr1919plus21/v-lazy-load/production/img/cat_.jpg)
+A VueJs component for easily creating lazy loaded images.
 
-Get *v-lazy-load*
-----------
+![v-lazy-load-cat](https://raw.githubusercontent.com/psr1919plus21/v-lazy-load/production/img/cat_.jpg)
 
-Here several ways to get *vue-rhythm*:
+## Installation
 
-**download**
+Either copy and paste the [_v-lazy-load_ component](https://raw.githubusercontent.com/psr1919plus21/v-lazy-load/production/v-lazy-load.vue) into your project, or install it via `npm`:
+```
+$ npm install v-lazy-load
+```
 
-Copypaste component in your project:
-[Get v-lazy-load](https://raw.githubusercontent.com/psr1919plus21/v-lazy-load/production/v-lazy-load.vue)
+## Usage
 
-**npm**
+Import *v-lazy-load* into your project (as described above) and place the `<v-lazy-load></v-lazy-load>` component, with its props, inside your template. `yourComponent.vu` should look something like this:
 
-    npm install v-lazy-load
+```
+<template>
+  <div class="app">
 
+    <div class="cat-image">
+      <v-lazy-load
+        :imgUrl="linkToCatPhoto"
+        :imgPlaceholder="linkToPlaceholderPhoto"
+        :imgAlt="'Cute cat'"
+      />
+    </div>
 
-Usage
----------
-In order to add *v-lazy-load*  you need to import *v-lazy-load* component to your project and place `<v-lazy-load></v-lazy-load>` component with it props to your template.
+  </div>
+</template>
 
-**Example:**
-yourComponent.vue
+<script>
+  import VLazyLoad from 'v-lazy-load/v-lazy-load.vue';
 
-    <template>
-      <div class="app">
+  export default {
+    components: {
+      VLazyLoad
+    }
+  }
+</script>
+```
 
-        <div class="cat-image">
-          <v-lazy-load
-            :imgUrl="linkToCatPhoto"
-            :imgPlaceholder="linkToPlaceholderPhoto"
-            :imgAlt="'Cute cat'"
-          />
-        </div>
+Now, *v-lazy-load* will create an `img` element with a blurred placeholder, which will be substituted by the original image once it loads.
 
-      </div>
-    </template>
+## Props
 
-    <script>
-      import VLazyLoad from 'v-lazy-load/v-lazy-load.vue';
+*Required:*
 
-      export default {
-        components: {
-          VLazyLoad
-        }
-      }
-    </script>
+**imgUrl** – [String] – Link to original image.
 
+**imgAlt** – [String] – Alternative text for image; shown if original image cannot load.
 
-After this *v-lazy-load* create an img element with blurred placeholder that will be substituted by original image when it be loaded.
+**imgPlaceholder** – [String] – Placeholder for original image. Not technically marked as required, but a cute cat svg and a `console.warn` message will remind you to add a placeholder if one is not found (message given based on HTML `lang` attribute; `en` and `ru` available):
 
-
-Props
----------
-
-*required:*
-
-**imgUrl** – [String] – link to original image.
-
-**imgAlt** – [String] – Alternative text for image, will be shown if original image not be loaded.
-
-**imgPlaceholder** – [String] – tiny placeholder for original image. This field doesn't mark as required actually, but you will see cute cat svg image that reminds you to add placeholder if not given. Also you will see `console.warn` message. Messages will be shown on lang based on html lang attribute. `en` and `ru` is available.
-
-example of forgotten placeholder prop:
-
-![v-lazy-load placehilder-cat](https://raw.githubusercontent.com/psr1919plus21/v-lazy-load/production/img/cat-advicer_.jpg)
+![v-lazy-load-placehilder-cat](https://raw.githubusercontent.com/psr1919plus21/v-lazy-load/production/img/cat-advicer_.jpg)
 
 
-*optional:*
+*Optional:*
 
-**blurValue** – [Number] – set value for placeholder's blur. `10` by default.
+**blurValue** – [Number] – Set value of placeholder blur (`10` by default).
 
-**minWidth** – [Number] – set min width for photo.
+**minWidth** – [Number] – Set minimum width of image.
 
-**minHeight** – [Number] – set min height of photo.
+**minHeight** – [Number] – Set minimum height of image.
 
-**Feel free to create an issue with bugreport or suggestions**
+## Contribute
+Bug reports and issues are welcome; please [open an issue](https://github.com/psr1919plus21/v-lazy-load/issues/new) in this repository.
 
-License
-=======
+## License
 
 Copyright (c) 2018 Philipp Gaponenko (psr1919plus21@gmail.com)
 

@@ -36,7 +36,7 @@ export default {
   data() {
     return {
       catPhoto: 'https://ptzgovorit.ru/sites/default/files/styles/885x100proc/public/insert_images/-gle7n-jy8u.jpg?itok=i5KpNzAT',
-      placeholderPhoto: 'https://pbs.twimg.com/media/DO7FnQyX4AAMLTR.jpg'
+      placeholderPhoto: 'https://m2ch.hk/b/big/thumb/167239026/15136785855420s.jpg'
     }
   }
 }

@@ -139,9 +139,11 @@ export default {
   methods: {
 
     getOriginalImage() {
+      this.$emit('loadStart');
       const vm = this;
       const originalImageRef = this.$refs['originalImageRef'];
       originalImageRef.onload = function () {
+        console.log('How can I reach this code in test?');
         vm.isOriginalImageLoaded = true;
         vm.customStyles = {};
         vm.thumbnailStyles = {};

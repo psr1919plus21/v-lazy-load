@@ -75,7 +75,7 @@ describe('vue-lazy-load', () => {
     expect(imgElement.element.src).toBe('cat_placeholder.jpg');
   });
 
-  it('should show standart placeholder in not given', () => {
+  it('should show standart placeholder if not given', () => {
     const wrapper = mount(VueLazyLoad, {
       propsData: {
         imgUrl: 'cat.jpg'
@@ -109,6 +109,18 @@ describe('vue-lazy-load', () => {
 
     const thumbnailFilterStyle = wrapper.vm.thumbnailStyles.filter;
     expect(thumbnailFilterStyle).toBe('blur(6px)');
+  });
+
+  it('should emit event when image load starts', () => {
+    const wrapper = mount(VueLazyLoad, {
+      propsData: {
+        imgUrl: 'cat.jpg',
+        imgPlaceholder: 'cat_placeholder.jpg',
+        blurValue: 6
+      }
+    });
+
+    expect(wrapper.emitted().loadStart).toBeTruthy();
   });
 
 })

@@ -76,6 +76,14 @@ example of forgotten placeholder prop:
 
 **minHeight** – [Number] – set min height of photo.
 
+Events
+---------
+
+*v-lazy-load* emit events:
+
+**loadStart** emit before original image loading start.
+
+
 **Feel free to create an issue with bugreport or suggestions**
 
 License

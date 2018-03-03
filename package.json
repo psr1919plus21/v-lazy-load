@@ -1,6 +1,6 @@
 {
   "name": "v-lazy-load",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Vue component for images lazy loading",
   "main": "vue-lazy-load.vue",
   "scripts": {

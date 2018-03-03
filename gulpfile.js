@@ -25,7 +25,7 @@ gulp.task('sass:compile-no-lint', function () {
   return gulp.src('./src/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(flatten())
-    .pipe(gulp.dest(`../${project_name}/static/css`));
+    .pipe(gulp.dest(`./${project_name}/static/css`));
 });
 
 gulp.task('sass:watch', ['sass:compile'], function () {
